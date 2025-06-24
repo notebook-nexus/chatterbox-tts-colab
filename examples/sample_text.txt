@@ -1,0 +1,1 @@
+This is a test of the Chatterbox TTS system. I hope this works properly now with the improved error handling and correct repository. The model should now load from ResembleAI/chatterbox instead of the old fluffyox repository.
