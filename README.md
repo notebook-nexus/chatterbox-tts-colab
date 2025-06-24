@@ -26,5 +26,4 @@ Transform any text into natural-sounding speech, clone voices from audio samples
 ## 📖 Table of Contents
 - [Usage Examples](#usage-examples)
 - [Contributing](#contributing)
-- [License](#license)
 
