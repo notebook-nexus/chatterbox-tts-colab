@@ -680,7 +680,7 @@ If you find this project useful, please consider giving it a star on GitHub! You
 - [ ] Enhanced emotion control
 - [ ] Batch processing optimizations
 - [ ] API endpoint integration
-- [ ] Mobile app companion
+- [ ] Training capabilites
 
 ---
 
