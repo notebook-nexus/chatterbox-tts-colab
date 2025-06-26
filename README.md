@@ -23,6 +23,29 @@ Transform any text into natural-sounding speech, clone voices from audio samples
 - 💾 **Google Drive Integration**: Automatic saving to your drive
 - 🔧 **Robust Error Handling**: Graceful fallbacks and clear error messages
 
+## 🔊 Demo: Text & Audio Samples
+
+Here’s a quick demo so you can see—and hear—how Chatterbox-TTS-Colab performs.
+
+---
+
+### 📝 Sample Text
+> “This is a test of the Chatterbox TTS system. I hope this works properly now with the improved error handling and correct repository. The model should now load from ResembleAI/chatterbox instead of the old fluffyox repository.”  
+
+---
+
+### 🎤 Original Voice Clip (for cloning)
+
+https://github.com/user-attachments/assets/b34c7eb1-8fda-46c9-a62f-d94318d9f12a
+
+---
+
+### 🤖 AI-Generated TTS Output
+
+https://github.com/user-attachments/assets/7ff42492-8928-41af-8d9a-d5e952566cbe
+
+---
+
 ## 📦 Installation
 
 The Colab notebook handles all installations automatically. If you want to run locally:
