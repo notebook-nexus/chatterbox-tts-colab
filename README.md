@@ -34,18 +34,17 @@ Here’s a quick demo so you can see—and hear—how Chatterbox-TTS-Colab perfo
 
 ---
 
-### 🎙️ Original Voice Clip (for cloning)
+### 🎤 Original Voice Clip (for cloning)
 
-<audio controls src="examples/cloned_voice.wav">
-</audio>
+https://github.com/user-attachments/assets/b34c7eb1-8fda-46c9-a62f-d94318d9f12a
 
 ---
 
 ### 🤖 AI-Generated TTS Output
 
-<audio controls src="examples/generated_voice.wav">
-</audio>
+https://github.com/user-attachments/assets/7ff42492-8928-41af-8d9a-d5e952566cbe
 
+---
 
 ## 📦 Installation
 
