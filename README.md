@@ -149,7 +149,7 @@ wav = model.generate(
     cfg=0.5,
     temperature=0.7,
     top_p=0.9,
-    steps=30  # More steps = higher quality
+    steps=30 
 )
 
 # Fast generation (lower quality)
@@ -312,7 +312,7 @@ wav = model.generate(
     exaggeration=0.4,  # Lower for more natural speech
     cfg=0.6,          # Higher for more controlled output
     temperature=0.6,   # Lower for more consistent quality
-    steps=25          # More steps for better quality
+    steps=25         
 )
 ```
 
