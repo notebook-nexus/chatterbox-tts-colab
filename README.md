@@ -404,131 +404,7 @@ except Exception as e:
 | `ModuleNotFoundError` | Missing dependencies | Run installation cell again |
 | `ConnectionError` | Network issues | Check internet connection, restart runtime |
 
-## 📚 Advanced Examples
-
-### 1. Podcast Generation
-
-```python
-def generate_podcast_episode(script_file, speaker_voices, output_file):
-    """Generate a multi-speaker podcast episode"""
-    with open(script_file, 'r') as f:
-        script = f.read()
-    
-    # Parse script (assumes format: "SPEAKER1: text")
-    lines = script.split('\n')
-    audio_segments = []
-    
-    for line in lines:
-        if ':' in line:
-            speaker, text = line.split(':', 1)
-            speaker = speaker.strip()
-            text = text.strip()
-            
-            if speaker in speaker_voices:
-                voice_file = speaker_voices[speaker]
-                wav = model.generate(text, audio_prompt_path=voice_file)
-                audio_segments.append(wav)
-                
-                # Add pause between speakers
-                pause = torch.zeros(int(0.5 * model.sr))
-                audio_segments.append(pause)
-    
-    # Concatenate all segments
-    full_audio = torch.cat(audio_segments, dim=-1)
-    ta.save(output_file, full_audio, model.sr)
-
-# Usage
-speaker_voices = {
-    'HOST': '/content/drive/MyDrive/host_voice.wav',
-    'GUEST': '/content/drive/MyDrive/guest_voice.wav'
-}
-generate_podcast_episode('script.txt', speaker_voices, 'podcast_episode.wav')
 ```
-
-### 2. Audiobook Generation
-
-```python
-def generate_audiobook(text_file, narrator_voice, output_dir):
-    """Generate an audiobook with chapters"""
-    with open(text_file, 'r') as f:
-        content = f.read()
-    
-    # Split into chapters
-    chapters = content.split('CHAPTER')
-    
-    for i, chapter in enumerate(chapters[1:], 1):  # Skip first empty split
-        chapter_text = f"Chapter {i}. {chapter}"
-        
-        # Split long chapters into segments
-        segments = split_text(chapter_text, max_length=500)
-        chapter_audio = []
-        
-        for segment in segments:
-            wav = model.generate(segment, audio_prompt_path=narrator_voice)
-            chapter_audio.append(wav)
-            
-            # Short pause between segments
-            pause = torch.zeros(int(0.3 * model.sr))
-            chapter_audio.append(pause)
-        
-        # Save chapter
-        chapter_full = torch.cat(chapter_audio, dim=-1)
-        chapter_file = f"{output_dir}/chapter_{i:02d}.wav"
-        ta.save(chapter_file, chapter_full, model.sr)
-        print(f"Generated: {chapter_file}")
-
-# Usage
-generate_audiobook(
-    'book.txt', 
-    '/content/drive/MyDrive/narrator_voice.wav',
-    '/content/drive/MyDrive/audiobook_output'
-)
-```
-
-### 3. Multi-Language Support
-
-```python
-def generate_multilingual_content(texts_dict, voice_files_dict):
-    """Generate content in multiple languages"""
-    for language, text in texts_dict.items():
-        voice_file = voice_files_dict.get(language)
-        
-        if voice_file:
-            # Adjust parameters for different languages
-            if language in ['spanish', 'italian']:
-                exaggeration = 0.7  # More expressive for Romance languages
-            elif language in ['japanese', 'mandarin']:
-                cfg = 0.6  # More controlled for tonal languages
-            else:
-                exaggeration, cfg = 0.5, 0.5  # Default for other languages
-            
-            wav = model.generate(
-                text,
-                audio_prompt_path=voice_file,
-                exaggeration=exaggeration,
-                cfg=cfg
-            )
-            
-            output_file = f"output_{language}.wav"
-            ta.save(output_file, wav, model.sr)
-            print(f"Generated {language}: {output_file}")
-
-# Usage
-texts = {
-    'english': "Hello, this is a test in English.",
-    'spanish': "Hola, esta es una prueba en español.",
-    'french': "Bonjour, ceci est un test en français."
-}
-
-voices = {
-    'english': '/content/drive/MyDrive/english_voice.wav',
-    'spanish': '/content/drive/MyDrive/spanish_voice.wav',
-    'french': '/content/drive/MyDrive/french_voice.wav'
-}
-
-generate_multilingual_content(texts, voices)
-```
-
 ## 🎨 Custom Voice Effects
 
 ### Emotion Presets
@@ -564,51 +440,6 @@ emotions = ['happy', 'sad', 'angry', 'excited']
 for emotion in emotions:
     wav = generate_with_emotion(text, voice_file, emotion)
     ta.save(f"emotion_{emotion}.wav", wav, model.sr)
-```
-
-## 🎯 Performance Optimization
-
-### Memory Management
-
-```python
-class ChatterboxManager:
-    def __init__(self):
-        self.model = None
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
-    
-    def load_model(self):
-        """Load model only when needed"""
-        if self.model is None:
-            self.model = ChatterboxTTS.from_pretrained(device=self.device)
-        return self.model
-    
-    def unload_model(self):
-        """Free up GPU memory"""
-        if self.model is not None:
-            del self.model
-            self.model = None
-            torch.cuda.empty_cache()
-            gc.collect()
-    
-    def generate_batch(self, texts, voice_file=None, **kwargs):
-        """Generate multiple audio files efficiently"""
-        model = self.load_model()
-        results = []
-        
-        for text in texts:
-            wav = model.generate(text, audio_prompt_path=voice_file, **kwargs)
-            results.append(wav)
-            
-            # Clear cache periodically
-            if len(results) % 5 == 0:
-                torch.cuda.empty_cache()
-        
-        return results
-
-# Usage
-manager = ChatterboxManager()
-texts = ["Text 1", "Text 2", "Text 3"]
-audio_files = manager.generate_batch(texts, voice_file="voice.wav")
 ```
 
 ## 🔒 Security and Privacy
@@ -663,14 +494,6 @@ We welcome contributions! Here's how you can help:
 4. **Documentation**: Help improve this README and docs
 5. **Examples**: Share your creative use cases
 
-### Development Setup
-
-```bash
-git clone https://github.com/UKR-PROJECTS/chatterbox-tts-colab.git
-cd chatterbox-tts-colab
-pip install -r requirements.txt
-```
-
 ## 🙏 Acknowledgments
 
 - **Resemble AI** for creating the incredible Chatterbox TTS model
@@ -685,25 +508,11 @@ pip install -r requirements.txt
 - Resemble AI Team for open-sourcing this state-of-the-art model
 - Contributors who help maintain and improve this Colab implementation
 
-## 🌟 Star History
-
-If you find this project useful, please consider giving it a star on GitHub! Your support helps us continue improving and maintaining this tool.
-
 ## 📞 Support
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/issues)
 - **Discussions**: [Community discussions and Q&A](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/discussions)
-- **Email**: ukrpurojekuto@gmail.com
-
-## 🚀 What's Next?
-
-- [ ] Real-time voice conversion
-- [ ] Voice morphing capabilities
-- [ ] Improved multilingual support
-- [ ] Enhanced emotion control
-- [ ] Batch processing optimizations
-- [ ] API endpoint integration
-- [ ] Training capabilites
+- **Email**: ujjwalkrai@gmail.com
 
 ---
 
