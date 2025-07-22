@@ -144,49 +144,6 @@ wav = model.generate(
 )
 ```
 
-## 💾 Google Drive Integration
-
-### Automatic Saving
-
-```python
-from google.colab import drive
-import os
-
-# Mount Google Drive
-drive.mount('/content/drive')
-
-# Set up directories
-output_dir = '/content/drive/MyDrive/ChatterboxTTS_Outputs'
-os.makedirs(output_dir, exist_ok=True)
-
-# Save with timestamp
-import datetime
-timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-output_path = f"{output_dir}/tts_output_{timestamp}.wav"
-
-wav = model.generate(text, audio_prompt_path=AUDIO_PROMPT_PATH)
-ta.save(output_path, wav, model.sr)
-print(f"Audio saved to: {output_path}")
-```
-
-### Batch Processing with Drive
-
-```python
-# Process multiple files from Drive
-input_dir = '/content/drive/MyDrive/ChatterboxTTS_Inputs'
-output_dir = '/content/drive/MyDrive/ChatterboxTTS_Outputs'
-
-# Read text files
-for filename in os.listdir(input_dir):
-    if filename.endswith('.txt'):
-        with open(os.path.join(input_dir, filename), 'r') as f:
-            text = f.read()
-        
-        wav = model.generate(text)
-        output_path = os.path.join(output_dir, f"{filename[:-4]}.wav")
-        ta.save(output_path, wav, model.sr)
-```
-
 ## 🤝 Contributing
 
 We welcome contributions! Here's how you can help:
