@@ -113,21 +113,6 @@ for i, text in enumerate(texts):
 
 ## 🎛️ Advanced Controls
 
-### Emotion and Intensity Control
-
-Chatterbox TTS offers unique emotion exaggeration control:
-
-```python
-# Subtle, natural speech
-wav = model.generate(text, exaggeration=0.3, cfg=0.5)
-
-# More dramatic, expressive speech
-wav = model.generate(text, exaggeration=0.8, cfg=0.3)
-
-# Highly exaggerated, theatrical speech
-wav = model.generate(text, exaggeration=1.0, cfg=0.2)
-```
-
 ### Parameter Guide
 
 | Parameter | Range | Description | Recommended Use |
@@ -157,62 +142,6 @@ wav = model.generate(
     audio_prompt_path=AUDIO_PROMPT_PATH,
     steps=15  # Fewer steps = faster generation
 )
-```
-
-## 🎤 Voice Cloning Guide
-
-### Preparing Reference Audio
-
-For best voice cloning results:
-
-1. **Audio Quality**: Use clear, high-quality audio (WAV or MP3)
-2. **Duration**: 3-30 seconds of speech is optimal
-3. **Content**: Choose audio with clear pronunciation
-4. **Background**: Minimal background noise
-5. **Format**: Supported formats: WAV, MP3, FLAC, M4A
-
-### Voice Cloning Tips
-
-```python
-# For different speaker types:
-
-# Fast-speaking reference
-wav = model.generate(text, audio_prompt_path=path, cfg=0.3, exaggeration=0.5)
-
-# Slow, deliberate speaker
-wav = model.generate(text, audio_prompt_path=path, cfg=0.7, exaggeration=0.4)
-
-# Emotional, expressive speaker
-wav = model.generate(text, audio_prompt_path=path, cfg=0.3, exaggeration=0.8)
-
-# Professional, neutral speaker
-wav = model.generate(text, audio_prompt_path=path, cfg=0.5, exaggeration=0.3)
-```
-
-### Audio Preprocessing
-
-```python
-import librosa
-import soundfile as sf
-
-def preprocess_audio(input_path, output_path):
-    """Preprocess audio for better voice cloning"""
-    # Load audio
-    audio, sr = librosa.load(input_path, sr=22050)
-    
-    # Normalize volume
-    audio = librosa.util.normalize(audio)
-    
-    # Remove silence
-    audio, _ = librosa.effects.trim(audio, top_db=20)
-    
-    # Save preprocessed audio
-    sf.write(output_path, audio, sr)
-    return output_path
-
-# Use preprocessed audio for cloning
-processed_audio = preprocess_audio("raw_audio.wav", "processed_audio.wav")
-wav = model.generate(text, audio_prompt_path=processed_audio)
 ```
 
 ## 💾 Google Drive Integration
@@ -256,121 +185,6 @@ for filename in os.listdir(input_dir):
         wav = model.generate(text)
         output_path = os.path.join(output_dir, f"{filename[:-4]}.wav")
         ta.save(output_path, wav, model.sr)
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues and Solutions
-
-#### 1. CUDA Out of Memory Error
-
-```python
-# Solution: Clear cache and reduce batch size
-import torch
-torch.cuda.empty_cache()
-
-# Use smaller text chunks
-def split_text(text, max_length=200):
-    sentences = text.split('. ')
-    chunks = []
-    current_chunk = ""
-    
-    for sentence in sentences:
-        if len(current_chunk + sentence) < max_length:
-            current_chunk += sentence + ". "
-        else:
-            if current_chunk:
-                chunks.append(current_chunk.strip())
-            current_chunk = sentence + ". "
-    
-    if current_chunk:
-        chunks.append(current_chunk.strip())
-    
-    return chunks
-
-# Process in chunks
-text_chunks = split_text(long_text)
-audio_chunks = []
-
-for chunk in text_chunks:
-    wav = model.generate(chunk, audio_prompt_path=AUDIO_PROMPT_PATH)
-    audio_chunks.append(wav)
-
-# Concatenate chunks
-final_audio = torch.cat(audio_chunks, dim=-1)
-ta.save("long_text_output.wav", final_audio, model.sr)
-```
-
-#### 2. Audio Quality Issues
-
-```python
-# Solution: Adjust generation parameters
-wav = model.generate(
-    text,
-    audio_prompt_path=AUDIO_PROMPT_PATH,
-    exaggeration=0.4,  # Lower for more natural speech
-    cfg=0.6,          # Higher for more controlled output
-    temperature=0.6,   # Lower for more consistent quality
-    steps=25         
-)
-```
-
-#### 3. Voice Cloning Not Working
-
-```python
-# Check audio file format and quality
-import librosa
-import numpy as np
-
-def check_audio_quality(audio_path):
-    try:
-        audio, sr = librosa.load(audio_path)
-        duration = len(audio) / sr
-        
-        print(f"Audio duration: {duration:.2f} seconds")
-        print(f"Sample rate: {sr} Hz")
-        print(f"Audio shape: {audio.shape}")
-        
-        # Check for silence
-        silence_threshold = 0.01
-        non_silent_ratio = np.mean(np.abs(audio) > silence_threshold)
-        print(f"Non-silent ratio: {non_silent_ratio:.2f}")
-        
-        if duration < 3:
-            print("⚠️  Audio might be too short for good cloning")
-        if non_silent_ratio < 0.5:
-            print("⚠️  Audio might have too much silence")
-        
-        return True
-    except Exception as e:
-        print(f"❌ Error loading audio: {e}")
-        return False
-
-# Check your reference audio
-check_audio_quality("your_reference_audio.wav")
-```
-
-#### 4. Slow Generation Speed
-
-```python
-# Optimization tips
-import gc
-
-def optimize_generation():
-    # Clear memory
-    torch.cuda.empty_cache()
-    gc.collect()
-    
-    # Use mixed precision
-    with torch.cuda.amp.autocast():
-        wav = model.generate(
-            text,
-            audio_prompt_path=AUDIO_PROMPT_PATH,
-            steps=15,  # Reduce steps for speed
-            cfg=0.5
-        )
-    
-    return wav
 ```
 
 ## 🤝 Contributing
