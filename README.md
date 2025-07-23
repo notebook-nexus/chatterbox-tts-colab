@@ -112,7 +112,7 @@ We welcome contributions! Here's how you can help:
 
 <div align="center">
 
-**Made with ❤️ by the Ujjwal Nova**
+**Made with ❤️ by the ukr**
 
 [⭐ Star this repo](https://github.com/notebook-nexus/chatterbox-tts-colab) | [🐛 Report Bug](https://github.com/notebook-nexus/chatterbox-tts-colab/issues) | [💡 Request Feature](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
 
