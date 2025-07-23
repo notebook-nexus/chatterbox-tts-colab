@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o_PnrXpxvAYozOYtnid74eqbHyOD9A45?usp=sharing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub stars](https://img.shields.io/github/stars/UKR-PROJECTS/chatterbox-tts-colab.svg?style=social&label=Star)](https://github.com/UKR-PROJECTS/chatterbox-tts-colab)
+[![GitHub stars](https://img.shields.io/github/stars/notebook-nexus/chatterbox-tts-colab.svg?style=social&label=Star)](https://github.com/UKR-PROJECTS/chatterbox-tts-colab)
 
 > 🚀 **One-click voice cloning and text-to-speech in Google Colab with Chatterbox TTS**
 
@@ -98,14 +98,14 @@ We welcome contributions! Here's how you can help:
 
 ### Special Thanks
 
-- Original Chatterbox TTS: [resemble-ai/chatterbox](https://github.com/notebook-nexus/chatterbox-tts-colab)
+- Original Chatterbox TTS: [resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox)
 - Resemble AI Team for open-sourcing this state-of-the-art model
 - Contributors who help maintain and improve this Colab implementation
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/issues)
-- **Discussions**: [Community discussions and Q&A](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
+- **Discussions**: [Community discussions and Q&A](https://github.com/notebook-nexus/chatterbox-tts-colab/discussions)
 - **Email**: ujjwalkrai@gmail.com
 
 ---
