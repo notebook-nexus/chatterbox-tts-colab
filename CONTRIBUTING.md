@@ -38,7 +38,7 @@ This project follows a standard code of conduct to ensure a welcoming environmen
 1. **Fork the Repository**
    ```bash
    # Fork the repo on GitHub, then clone your fork
-   git clone https://github.com/UKR-PROJECTS/chatterbox-tts-colab.git
+   git clone https://github.com/notebook-nexus/chatterbox-tts-colab.git
    cd chatterbox-tts-colab
    ```
 
