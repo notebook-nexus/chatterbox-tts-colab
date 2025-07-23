@@ -98,7 +98,7 @@ We welcome contributions! Here's how you can help:
 
 ### Special Thanks
 
-- Original Chatterbox TTS: [resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox)
+- Original Chatterbox TTS: [resemble-ai/chatterbox](https://github.com/notebook-nexus/chatterbox-tts-colab)
 - Resemble AI Team for open-sourcing this state-of-the-art model
 - Contributors who help maintain and improve this Colab implementation
 
