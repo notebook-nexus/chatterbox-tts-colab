@@ -13,7 +13,7 @@ Chatterbox TTS in Google Colab environment.
 ---
 
 
-- Author: Ujjwal Nova
+- Author: ukr
 - License: MIT
 - Repository: https://github.com/notebook-nexus/chatterbox-tts-colab
 
