@@ -15,7 +15,7 @@ Chatterbox TTS in Google Colab environment.
 
 - Author: Ujjwal Nova
 - License: MIT
-- Repository: https://github.com/UKR-PROJECTS/chatterbox-tts-colab
+- Repository: https://github.com/notebook-nexus/chatterbox-tts-colab
 
 
 ---
