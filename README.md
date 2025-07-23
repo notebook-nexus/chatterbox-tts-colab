@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o_PnrXpxvAYozOYtnid74eqbHyOD9A45?usp=sharing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub stars](https://img.shields.io/github/stars/notebook-nexus/chatterbox-tts-colab.svg?style=social&label=Star)](https://github.com/UKR-PROJECTS/chatterbox-tts-colab)
+[![GitHub stars](https://img.shields.io/github/stars/notebook-nexus/chatterbox-tts-colab.svg?style=social&label=Star)](https://github.com/notebook-nexus/chatterbox-tts-colab)
 
 > 🚀 **One-click voice cloning and text-to-speech in Google Colab with Chatterbox TTS**
 
@@ -114,7 +114,7 @@ We welcome contributions! Here's how you can help:
 
 **Made with ❤️ by the Ujjwal Nova**
 
-[⭐ Star this repo](https://github.com/UKR-PROJECTS/chatterbox-tts-colab) | [🐛 Report Bug](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/issues) | [💡 Request Feature](https://github.com/UKR-PROJECTS/chatterbox-tts-colab/issues)
+[⭐ Star this repo](https://github.com/notebook-nexus/chatterbox-tts-colab) | [🐛 Report Bug](https://github.com/notebook-nexus/chatterbox-tts-colab/issues) | [💡 Request Feature](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
 
 </div>
 
