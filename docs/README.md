@@ -2,6 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1o_PnrXpxvAYozOYtnid74eqbHyOD9A45?usp=sharing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)](STATUS.md)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![GitHub stars](https://img.shields.io/github/stars/notebook-nexus/chatterbox-tts-colab.svg?style=social&label=Star)](https://github.com/notebook-nexus/chatterbox-tts-colab)
 
@@ -78,15 +79,16 @@ wav = model.generate(
 )
 ```
 
+For more detailed documentation, see our [USAGE.md](USAGE.md)
+
+---
+
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-1. **Report Bugs**: Use the GitHub Issues tab
-2. **Feature Requests**: Suggest new features via Issues
-3. **Code Contributions**: Fork the repo and submit PRs
-4. **Documentation**: Help improve this README and docs
-5. **Examples**: Share your creative use cases
+---
+
 
 ## 🙏 Acknowledgments
 
@@ -104,17 +106,39 @@ We welcome contributions! Here's how you can help:
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
-- **Discussions**: [Community discussions and Q&A](https://github.com/notebook-nexus/chatterbox-tts-colab/discussions)
-- **Email**: ujjwalkrai@gmail.com
+- 📧 Email: ujjwalkrai@gmail.com
+- 🐛 Issues: [Repo Issues](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
+- 🔓 Security: [Repo Security](https://github.com/notebook-nexus/chatterbox-tts-colab/security)
+- ⛏ Pull Request: [Repo Pull Request](https://github.com/notebook-nexus/chatterbox-tts-colab/pulls)
+- 📖 Docs: [Repo Documentation](https://github.com/notebook-nexus/chatterbox-tts-colab/tree/main/docs)
+---
+
+## 🔗 Connect
+
+#### 📝 Writing & Blogging
+[![Hashnode](https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://ukr-projects.hashnode.dev/)
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@ukrpurojekuto)
+
+#### 💼 Professional
+[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://ukr-projects.github.io/ukr-projects/)
+[![ukr-projects](https://img.shields.io/badge/main-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ukr-projects)
+[![cyberx-projects](https://img.shields.io/badge/cybersecurity-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cyberx-projects)
+[![contro-projects](https://img.shields.io/badge/frontend-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/contro-projects)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/u-k-r/ )
+[![Main Channel](https://img.shields.io/badge/main-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@ujjwal-krai)
+
+#### 🌐 Social
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/ukr_projects)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ukr_projects)
+[![Tech Channel](https://img.shields.io/badge/tech-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@ukr-projects)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ukr_projects)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/user/mrujjwalkr)
 
 ---
 
 <div align="center">
-
-**Made with ❤️ by the ukr**
-
-[⭐ Star this repo](https://github.com/notebook-nexus/chatterbox-tts-colab) | [🐛 Report Bug](https://github.com/notebook-nexus/chatterbox-tts-colab/issues) | [💡 Request Feature](https://github.com/notebook-nexus/chatterbox-tts-colab/issues)
-
+  Made with ❤️ by <a href="https://github.com/ukr-projects">ukr</a>
 </div>
+
+---
 
